@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  background-color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -23,7 +24,7 @@ header {
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 .tab {
@@ -42,4 +43,56 @@ header {
 .tab-current {
   border-bottom: 2px solid var(--primary-500);
   color: var(--primary-500);
+}
+
+/* ========================
+Main
+======================== */
+.wrapper-main {
+  margin: 52px auto;
+  width: 73%; 
+}
+
+.search {
+  margin-bottom: 48px;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--outline);
+  border-radius: 4px;
+}
+
+.search__input {
+  width: 100%;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.search__input::focus {
+  border: none;
+}
+.search__input::placeholder {
+  color: var(--on-surface-disabled);
+}
+
+.qr_scanner {
+  margin-left: 16px;
+}
+
+.fav {
+  margin-left: auto;
+  margin-right: auto;
+}
+.fav__icon {
+  margin-right: 16px;
+}
+.fav__title--text {
+  color: var(--on-surface-medium-emphasis);
+  font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
 }
