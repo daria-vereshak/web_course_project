@@ -42,11 +42,27 @@ header {
   text-transform: uppercase;
   background-color: inherit;
   color: var(--on-surface-medium-emphasis);
+  cursor: pointer;
 }
 
 .tab-current {
   border-bottom: 2px solid var(--primary-500);
   color: var(--primary-500);
+}
+.icon {
+  cursor: pointer;
+  float: left;
+  background: var(--surface) url(./assets/header_sprite.png) no-repeat;
+}
+.logo .icon {
+  width: 131.36px;
+  height: 23.552px; 
+  background-position: -10px -10px;
+}
+.user .icon {
+  width: 32px;
+  height: 32px; 
+  background-position: -10px -54px;
 }
 
 /* ========================
@@ -60,7 +76,6 @@ Main
 .search {
   margin-bottom: 48px;
   padding: 16px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,10 +110,13 @@ Main
 
 .fav__title {
   margin-bottom: 16px;
+  display: flex;
+  color: var(--secondary-700);
 }
 
 .fav__icon {
   margin-right: 16px;
+  padding: 2px 0;
 }
 
 .fav__title--text {
@@ -123,7 +141,6 @@ Main
   padding: 8px 12px;
   grid-template-columns: 40px 1fr 100px 40px;
   column-gap: 16px;
-  /* background-color: inherit; */
   background: none;
 }
 
@@ -184,6 +201,11 @@ select:not([multiple]) {
 .share {
   background: none;
 }
+.notification {
+  background:none;
+  cursor: pointer;
+}
+
 
 .product {
   padding: 8px 12px;

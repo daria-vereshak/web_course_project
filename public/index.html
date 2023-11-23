@@ -18,14 +18,14 @@
     <header>
       <div class="wrapper">
         <div class="logo">
-          <img src="./assets/logo.png" alt="logo" />
+          <div class="icon"></div>
         </div>
         <div class="nav">
           <button class="tab main tab-current">Главная</button>
           <button class="tab analytics">Аналитика</button>
         </div>
         <div class="user">
-          <img src="./assets/ava.png" alt="user-avatar" />
+          <div class="icon"></div>
         </div>
       </div>
     </header>
@@ -33,21 +33,23 @@
       <div class="wrapper-main">
         <div class="search">
           <input type="text" name="search" class="search__input" placeholder="Поиск прибора в Botanique по номеру, названию, подразделению и др.">
-          <img src="./assets/qr_code_scanner-24px.svg" alt="qr_scanner" class="qr_scanner">
+          <svg class="qr_scanner" viewBox="0 0 24 24" width="24" height="24">
+            <use href="./assets/main_sprites.svg#qr_scanner" x="0" y="0"></use>
+          </svg>
         </div>
         <div class="fav">
           <div class="fav__title">
-            <img src="./assets/favorite.png" alt="favorite" class="fav__icon">
+            <svg class="fav__icon" viewBox="0 0 20 20" width="20" height="20">
+              <use href="./assets/main_sprites.svg#favorite" x="0" y="0"></use>
+            </svg>
             <span class="fav__title--text">Любимые приборы</span>
           </div>
           <div class="fav__cart">
             <div class="cart__container">
               <div class="card header">
-                <!-- <img src="./assets/pH-метр Mettler-Toledo International, Inc. SevenCompact S220.png" alt="pH-метр" class="card__img"> -->
                 <div class="header__text"></div>
                 <span class="header__text">Название</span>
                 <span class="header__text">Статус</span>
-                <!-- <button class="share"><img src="./assets/share.svg" alt="share"></button> -->
                 <div class="header__text"></div>
               </div>
               <div class="card">
@@ -57,7 +59,11 @@
                   <option value="">Свободен</option>
                   <option value="">Занят</option>
                 </select>
-                <button class="share"><img src="./assets/share.svg" alt="share"></button>
+                <button class="share">
+                  <svg class="notification" viewBox="0 0 24 24" width="24" height="24">
+                    <use href="./assets/main_sprites.svg#notification_active" x="0" y="0"></use>
+                  </svg>                  
+                </button>
               </div>
             </div>
           </div>
