@@ -25,8 +25,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: inherit;
 }
-
+.nav {
+  display: flex;
+  background-color: inherit;
+}
 .tab {
   padding: 16px 35px;
   font-family: Roboto;
@@ -36,7 +40,7 @@ header {
   line-height: 16px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
-  background-color: var(--secondary-100);
+  background-color: inherit;
   color: var(--on-surface-medium-emphasis);
 }
 
