@@ -210,3 +210,15 @@ select:not([multiple]) {
 .product {
   padding: 8px 12px;
 }
+
+
+
+
+
+/* ========================
+Error
+======================== */
+.wrapper-error {
+  margin: 40vh auto;
+  text-align: center;
+}
