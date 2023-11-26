@@ -1,6 +1,7 @@
 const getTab = (tab) => {
   const container = document.querySelector(".container");
   const file = tab + ".html";
+  // check using
   fetch("pages/" + file)
     .then((response) => response.text())
     .then((html) => {

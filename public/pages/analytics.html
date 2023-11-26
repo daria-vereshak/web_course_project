@@ -1,1 +1,72 @@
-<div class="wrapper-analytics">Пока пустая страница</div>
+<div class="wrapper-analytics">
+  <div class="card-data">
+    <div class="card-top">
+      <img src="./assets/unknown_device.png" alt="unknown" width="40px" height="40px" />
+      <div class="full-name">
+        <h2 class="name">
+          pH-метр Mettler-Toledo International, Inc. SevenCompact S220
+        </h2>
+        <p class="state">
+          <span>S1.4.I14-9.001</span>&emsp;&bull;&emsp;<span>00-024004</span>
+        </p>
+      </div>
+      <div class="action">
+        <select name="card-state" id="" class="card__state">
+          <option value="">В работе</option>
+          <option value="">Свободен</option>
+        </select>
+        <svg class="favorite analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+          <use href="./assets/analytics_sprite.svg#favorite" x="0" y="0"></use>
+        </svg>
+        <svg class="settings analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+          <use href="./assets/analytics_sprite.svg#settings" x="0" y="0"></use>
+        </svg>
+      </div>
+    </div>
+    <hr>
+    <div class="actions">
+      <select name="select" id="" class="actions__state">
+        <option value="">Работа прибора</option>
+        <option value="">Работа прибора</option>
+      </select>
+      <div class="save">
+        <svg class="alarm analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+          <use href="./assets/analytics_sprite.svg#alarm_on" x="0" y="0"></use>
+        </svg>
+        <div class="save-btn">
+          <button>Сохранить PDF</button>
+          <button class="parameters">&#8942;</button>
+        </div>
+      </div>
+    </div>
+    <div class="times">
+      <div class="date-time">
+        <input type="date" name="start-date" id="start-date">
+        <svg class="arrow analitics-icon" viewBox="0 0 16 16" width="16" height="16">
+          <use href="./assets/analytics_sprite.svg#arrow_forward" x="0" y="0"></use>
+        </svg>
+        <input type="date" name="end-date" id="end-date">
+      </div>
+      <div class="times-chips">
+          <input type="radio" id="day" name="time-chip" value="day"/>
+          <label for="day">День</label>
+
+          <input type="radio" id="week" name="time-chip" value="week"/>
+          <label for="week">Неделя</label>
+          
+          <input type="radio" id="weeks" name="time-chip" value="weeks" checked/>
+          <label for="weeks">2 недели</label>
+
+          <input type="radio" id="month" name="time-chip" value="month"/>
+          <label for="month">Месяц</label>
+
+          <input type="radio" id="months" name="time-chip" value="months" />
+          <label for="months">3 Месяца</label>
+
+          <input type="radio" id="half-year" name="time-chip" value="half-year" />
+          <label for="half-year">Полгода</label>
+      </div>
+    </div>
+    <div class="table"></div>
+  </div>
+</div>
