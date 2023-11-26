@@ -10,6 +10,7 @@
   --outline: rgba(0, 0, 0, 0.12);
   --surface: rgba(255, 255, 255, 1);
   --surface-overlay: rgba(33, 33, 33, 0.08);
+  --link: rgba(46, 155, 194, 1);
   margin: 0;
   padding: 0;
   border: none;
@@ -247,7 +248,6 @@ Analytics
 }
 
 .card-top {
-  /* margin: 8px; */
   display: flex;
 }
 
@@ -401,13 +401,83 @@ input[type="date"] {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;  
+  line-height: 20px;
   user-select: none;
   cursor: pointer;
 }
-.times-chips input[type="radio"]:checked + label {
+
+.times-chips input[type="radio"]:checked+label {
   background-color: var(--primary-100);
 }
+
+.table {
+  padding: 12px 16px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 160px 130px 1fr 140px 140px;
+}
+
+.table-row .cell {
+  padding: 12px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.table-row .header,
+.table-row .duration {
+  color: var(--on-surface-disabled);
+}
+
+.status .status-stat {
+  color: var(--primary-500);
+}
+
+.status .work-type,
+.jobs {
+  color: var(--on-surface-medium-emphasis);
+}
+
+.jobs {
+  height: 100px;
+}
+
+.result {
+  height: 100px;
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.line {
+  flex: 1 0 0;
+  overflow: hidden;
+  color: var(--on-surface-medium-emphasis);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.line span {
+  font-weight: 700;
+}
+
+.checked {
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.table-row .user {
+  color: var(--link);
+}
+
 /* ========================
 Error
 ======================== */

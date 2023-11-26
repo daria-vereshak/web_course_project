@@ -1,7 +1,12 @@
 <div class="wrapper-analytics">
   <div class="card-data">
     <div class="card-top">
-      <img src="./assets/unknown_device.png" alt="unknown" width="40px" height="40px" />
+      <img
+        src="./assets/unknown_device.png"
+        alt="unknown"
+        width="40px"
+        height="40px"
+      />
       <div class="full-name">
         <h2 class="name">
           pH-метр Mettler-Toledo International, Inc. SevenCompact S220
@@ -15,22 +20,37 @@
           <option value="">В работе</option>
           <option value="">Свободен</option>
         </select>
-        <svg class="favorite analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+        <svg
+          class="favorite analitics-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
           <use href="./assets/analytics_sprite.svg#favorite" x="0" y="0"></use>
         </svg>
-        <svg class="settings analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+        <svg
+          class="settings analitics-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
           <use href="./assets/analytics_sprite.svg#settings" x="0" y="0"></use>
         </svg>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="actions">
       <select name="select" id="" class="actions__state">
         <option value="">Работа прибора</option>
         <option value="">Работа прибора</option>
       </select>
       <div class="save">
-        <svg class="alarm analitics-icon" viewBox="0 0 24 24" width="24" height="24">
+        <svg
+          class="alarm analitics-icon"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
           <use href="./assets/analytics_sprite.svg#alarm_on" x="0" y="0"></use>
         </svg>
         <div class="save-btn">
@@ -41,32 +61,105 @@
     </div>
     <div class="times">
       <div class="date-time">
-        <input type="date" name="start-date" id="start-date">
-        <svg class="arrow analitics-icon" viewBox="0 0 16 16" width="16" height="16">
-          <use href="./assets/analytics_sprite.svg#arrow_forward" x="0" y="0"></use>
+        <input type="date" name="start-date" id="start-date" />
+        <svg
+          class="arrow analitics-icon"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+        >
+          <use
+            href="./assets/analytics_sprite.svg#arrow_forward"
+            x="0"
+            y="0"
+          ></use>
         </svg>
-        <input type="date" name="end-date" id="end-date">
+        <input type="date" name="end-date" id="end-date" />
       </div>
       <div class="times-chips">
-          <input type="radio" id="day" name="time-chip" value="day"/>
-          <label for="day">День</label>
+        <input type="radio" id="day" name="time-chip" value="day" />
+        <label for="day">День</label>
 
-          <input type="radio" id="week" name="time-chip" value="week"/>
-          <label for="week">Неделя</label>
-          
-          <input type="radio" id="weeks" name="time-chip" value="weeks" checked/>
-          <label for="weeks">2 недели</label>
+        <input type="radio" id="week" name="time-chip" value="week" />
+        <label for="week">Неделя</label>
 
-          <input type="radio" id="month" name="time-chip" value="month"/>
-          <label for="month">Месяц</label>
+        <input type="radio" id="weeks" name="time-chip" value="weeks" checked />
+        <label for="weeks">2 недели</label>
 
-          <input type="radio" id="months" name="time-chip" value="months" />
-          <label for="months">3 Месяца</label>
+        <input type="radio" id="month" name="time-chip" value="month" />
+        <label for="month">Месяц</label>
 
-          <input type="radio" id="half-year" name="time-chip" value="half-year" />
-          <label for="half-year">Полгода</label>
+        <input type="radio" id="months" name="time-chip" value="months" />
+        <label for="months">3 Месяца</label>
+
+        <input type="radio" id="half-year" name="time-chip" value="half-year" />
+        <label for="half-year">Полгода</label>
       </div>
     </div>
-    <div class="table"></div>
+    <div class="table">
+      <div class="table-row">
+        <div class="cell header">Начало</div>
+        <div class="cell header">Тип работ</div>
+        <div class="cell header">Работы</div>
+        <div class="cell header">Результат</div>
+        <div class="cell header">Пользователь</div>
+      </div>
+      <hr />
+      <div class="table-row">
+        <div class="cell duration">09.10.2021, 15:46</div>
+        <div class="cell status">
+          <div class="status-stat">В работе</div>
+          <div class="work-type">Измерение</div>
+        </div>
+        <div class="cell jobs">
+          <p class="line">
+            <span>Образец/серия</span>: 000100057935_170000010325_0000251849
+          </p>
+        </div>
+        <div class="cell result">
+          <p class="line"></p>
+          <svg
+            class="checked analitics-icon"
+            viewBox="0 0 20 20"
+            width="20"
+            height="20"
+          >
+            <use href="./assets/analytics_sprite.svg#checked" x="0" y="0"></use>
+          </svg>
+        </div>
+        <div class="cell user">morozovava</div>
+      </div>
+      <hr />
+      <div class="table-row">
+        <div class="cell duration">12.10.2021, 12:17</div>
+        <div class="cell status">
+          <div class="status-stat">В работе</div>
+          <div class="work-type">Калибровка</div>
+        </div>
+        <div class="cell jobs">
+          <p class="line">
+            <span>Номер колонки</span>: Колонка 2 <br /><span>Образец</span>:
+            Образец 2 <br /><span>Образец</span>: образец 1 <br /><span
+              >Метод</span
+            >: метов тестовый <br /><span>Номер колонки</span>: Колонка 1
+          </p>
+        </div>
+        <div class="cell result">
+          <p class="line">
+            Промывка с указанием вещества: Вещество Комментарий: тест успешности
+          </p>
+          <svg
+            class="checked analitics-icon"
+            viewBox="0 0 20 20"
+            width="20"
+            height="20"
+          >
+            <use href="./assets/analytics_sprite.svg#checked" x="0" y="0"></use>
+          </svg>
+        </div>
+        <div class="cell user">morozovava</div>
+      </div>
+      <hr />
+    </div>
   </div>
 </div>
