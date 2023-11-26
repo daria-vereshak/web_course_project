@@ -1,6 +1,38 @@
+<template id="cart_row">
+  <div class="card">
+    <img
+      src=""
+      alt="device"
+      class="card__img"
+    />
+    <span class="card__text"
+      >Some device</span
+    >
+    <select name="state" id="" class="card__state">
+      <option value="1">Свободен</option>
+      <option value="0">Занят</option>
+    </select>
+    <button class="share">
+      <svg class="notification" viewBox="0 0 24 24" width="24" height="24">
+        <use
+          href="./assets/main_sprites.svg#notification_active"
+          x="0"
+          y="0"
+        ></use>
+      </svg>
+    </button>
+  </div>
+  <hr>
+</template>
+
 <div class="wrapper-main">
   <div class="search">
-    <input type="text" name="search" class="search__input" placeholder="Поиск прибора в Botanique по номеру, названию, подразделению и др.">
+    <input
+      type="text"
+      name="search"
+      class="search__input"
+      placeholder="Поиск прибора в Botanique по номеру, названию, подразделению и др."
+    />
     <svg class="qr_scanner" viewBox="0 0 24 24" width="24" height="24">
       <use href="./assets/main_sprites.svg#qr_scanner" x="0" y="0"></use>
     </svg>
@@ -20,20 +52,8 @@
           <span class="header__text">Статус</span>
           <div class="header__text"></div>
         </div>
-        <div class="card">
-          <img src="./assets/pH-метр Mettler-Toledo International, Inc. SevenCompact S220.png" alt="pH-метр" class="card__img">
-          <span class="card__text">pH-метр Mettler-Toledo International, Inc. SevenCompact S220</span>
-          <select name="state" id="" class="card__state">
-            <option value="">Свободен</option>
-            <option value="">Занят</option>
-          </select>
-          <button class="share">
-            <svg class="notification" viewBox="0 0 24 24" width="24" height="24">
-              <use href="./assets/main_sprites.svg#notification_active" x="0" y="0"></use>
-            </svg>                  
-          </button>
-        </div>
       </div>
     </div>
   </div>
 </div>
+<script type="module" src="./js/main.js"></script>

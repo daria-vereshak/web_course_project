@@ -20,7 +20,9 @@
 body {
   background-color: #F5F5F5;
 }
-
+a {
+  text-decoration: none;
+}
 header {
   background-color: var(--surface);
 }
@@ -149,6 +151,7 @@ Main
 }
 
 .cart__container {
+  padding: 0 12px;
   background-color: var(--surface);
 }
 

@@ -1,0 +1,39 @@
+{
+  "cart": [
+    {
+      "id": "1",
+      "name": "pH-метр Mettler-Toledo International, Inc. SevenCompact S220",
+      "img": "/img/ph-meter.png",
+      "isFree": true,
+      "notification": "active"
+    },
+    {
+      "id": "2",
+      "name": "Спектрофотометр Varian, Inc Cary 50 Bio",
+      "img": "/img/Спектрофотометр.png",
+      "isFree": true,
+      "notification": "active"
+    },
+    {
+      "id": "3",
+      "name": "Титратор",
+      "img": "/img/Титратор.png",
+      "isFree": true,
+      "notification": "none"
+    },
+    {
+      "id": "4",
+      "name": "Коагулометр Tcoag, KC 4 Delta",
+      "img": "/img/Коагулометр.png",
+      "isFree": true,
+      "notification": "off"
+    },
+    {
+      "id": "5",
+      "name": "Коагулометр Tcoag, KC 4 Delta",
+      "img": "/img/Коагулометр.png",
+      "isFree": true,
+      "notification": "off"
+    }
+  ]
+}
