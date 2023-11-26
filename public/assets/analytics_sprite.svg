@@ -15,4 +15,7 @@
     <path d="M8 2.66669L7.06 3.60669L10.78 7.33335H2.66667V8.66669H10.78L7.06 12.3934L8 13.3334L13.3333 8.00002L8 2.66669Z" fill="black" fill-opacity="0.6"/>
   </symbol>
 
+  <symbol id="checked" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50001 13.5L4.00001 10L2.83334 11.1667L7.50001 15.8334L17.5 5.83335L16.3333 4.66669L7.50001 13.5Z" fill="#23B04A"/>
+  </symbol>
 </svg>
