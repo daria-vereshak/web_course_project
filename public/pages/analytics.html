@@ -1,3 +1,29 @@
+<template id="row">
+  <div class="table-row">
+    <div class="cell duration"></div>
+    <div class="cell status">
+      <div class="status-stat"></div>
+      <div class="work-type"></div>
+    </div>
+    <div class="cell jobs">
+      <p class="line"></p>
+    </div>
+    <div class="cell result">
+      <p class="line"></p>
+      <svg
+        class="checked analitics-icon"
+        viewBox="0 0 20 20"
+        width="20"
+        height="20"
+      >
+        <use href="" x="0" y="0"></use>
+      </svg>
+    </div>
+    <div class="cell user"></div>
+  </div>
+  <hr />
+</template>
+
 <div class="wrapper-analytics">
   <div class="card-data">
     <div class="card-top">
@@ -103,61 +129,6 @@
         <div class="cell header">Работы</div>
         <div class="cell header">Результат</div>
         <div class="cell header">Пользователь</div>
-      </div>
-      <hr />
-      <div class="table-row">
-        <div class="cell duration">09.10.2021, 15:46</div>
-        <div class="cell status">
-          <div class="status-stat">В работе</div>
-          <div class="work-type">Измерение</div>
-        </div>
-        <div class="cell jobs">
-          <p class="line">
-            <span>Образец/серия</span>: 000100057935_170000010325_0000251849
-          </p>
-        </div>
-        <div class="cell result">
-          <p class="line"></p>
-          <svg
-            class="checked analitics-icon"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-          >
-            <use href="./assets/analytics_sprite.svg#checked" x="0" y="0"></use>
-          </svg>
-        </div>
-        <div class="cell user">morozovava</div>
-      </div>
-      <hr />
-      <div class="table-row">
-        <div class="cell duration">12.10.2021, 12:17</div>
-        <div class="cell status">
-          <div class="status-stat">В работе</div>
-          <div class="work-type">Калибровка</div>
-        </div>
-        <div class="cell jobs">
-          <p class="line">
-            <span>Номер колонки</span>: Колонка 2 <br /><span>Образец</span>:
-            Образец 2 <br /><span>Образец</span>: образец 1 <br /><span
-              >Метод</span
-            >: метов тестовый <br /><span>Номер колонки</span>: Колонка 1
-          </p>
-        </div>
-        <div class="cell result">
-          <p class="line">
-            Промывка с указанием вещества: Вещество Комментарий: тест успешности
-          </p>
-          <svg
-            class="checked analitics-icon"
-            viewBox="0 0 20 20"
-            width="20"
-            height="20"
-          >
-            <use href="./assets/analytics_sprite.svg#checked" x="0" y="0"></use>
-          </svg>
-        </div>
-        <div class="cell user">morozovava</div>
       </div>
       <hr />
     </div>

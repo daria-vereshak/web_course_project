@@ -1,6 +1,6 @@
-const getMainInfo = () => {
-  const url = "../../db.json";
+const url = "../../db.json";
 
+const getMainInfo = () => {
   const fillMainPage = (data) => {
     const container = document.querySelector(".cart__container");
     const template = document.querySelector("#cart_row");
@@ -22,7 +22,8 @@ const getMainInfo = () => {
       });
 
       const notification = clone.querySelector("use");
-      notification.href.baseVal = "./assets/main_sprites.svg#notification_" + element.notification;
+      notification.href.baseVal =
+        "./assets/main_sprites.svg#notification_" + element.notification;
 
       container.appendChild(clone);
     });
@@ -44,7 +45,71 @@ const getMainInfo = () => {
   });
 };
 
-const getAnalyticsInfo = () => {};
+const getAnalyticsInfo = () => {
+  const fillAnalyticsPage = (data) => {
+    const container = document.querySelector(".table");
+    const template = document.querySelector("#row");
+
+    data.forEach((element) => {
+      const clone = template.content.cloneNode(true);
+
+      const duration = clone.querySelector(".duration");
+      duration.textContent = element.duration;
+
+      const status = clone.querySelector(".status");
+      status.querySelector(".status-stat").textContent = element.status.stat;
+      status.querySelector(".work-type").textContent = element.status.type;
+
+      const getInnerHTML = (arr, isResult) => {
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+          if (i !== 0) str += "<br />";
+          if (isResult) str += arr[i];
+          else
+            str +=
+              "<span>" +
+              arr[i].substring(0, arr[i].indexOf(":")) +
+              "</span>" +
+              arr[i].substring(arr[i].indexOf(":"));
+        }
+        return str;
+      };
+
+      const jobs = clone.querySelector(".jobs").querySelector(".line");
+      jobs.innerHTML = getInnerHTML(element.jobs, false);
+
+      const result = clone.querySelector(".result");
+      result.querySelector(".line").innerHTML = getInnerHTML(
+        element.result.text,
+        true
+      );
+
+      if (element.result.isChecked)
+        result.querySelector("use").href.baseVal =
+          "./assets/analytics_sprite.svg#checked";
+
+      const user = clone.querySelector(".user");
+      user.textContent = element.user;
+
+      container.appendChild(clone);
+    });
+  };
+
+  fetch(url).then((response) => {
+    if (response.ok) {
+      response.json().then((json) => {
+        fillAnalyticsPage(json.analytics);
+      });
+    } else {
+      console.log(
+        "Network request for products.json failed with response " +
+          response.status +
+          ": " +
+          response.statusText
+      );
+    }
+  });
+};
 
 const getTab = (tab) => {
   const container = document.querySelector(".container");
