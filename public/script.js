@@ -1,4 +1,4 @@
-const url = "../../db.json";
+const url = "../db.json";
 
 const getMainInfo = () => {
   const fillMainPage = (data) => {
