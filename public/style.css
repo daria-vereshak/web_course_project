@@ -209,7 +209,6 @@ select {
   font-weight: 400;
   line-height: 20px;
   background: none;
-  cursor: pointer;
 }
 
 select:not([multiple]) {
