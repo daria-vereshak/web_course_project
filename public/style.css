@@ -81,6 +81,20 @@ hr {
   border: 1px solid var(--surface-overlay);
   width: 100%;
 }
+@media (width <= 550px) {
+  .wrapper {
+    padding-top: 12px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 12px;
+    }
+}
+@media (width <= 308px) {
+  .wrapper {
+    width: 308px;
+    padding: 12px 0 0 0;
+  }
+}
 
 /* ========================
 Main
@@ -231,6 +245,15 @@ select:not([multiple]) {
 }
 
 @media (width <= 550px) {
+  .logo {
+    order: 1;
+  }
+  .user {
+    order: 2;
+  }
+  .nav {
+    order: 3;
+  }
   .wrapper-main {
     width: 87%;
   }
@@ -241,7 +264,12 @@ select:not([multiple]) {
     grid-template-columns: 40px 1fr;
   }
 }
-
+@media (width <= 308px) {
+  .wrapper-main {
+    width: 268px;
+    margin: 52px 20px;
+  }
+}
 /* ========================
 Analytics
 ======================== */
