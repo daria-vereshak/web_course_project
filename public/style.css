@@ -20,9 +20,11 @@
 body {
   background-color: #F5F5F5;
 }
+
 a {
   text-decoration: none;
 }
+
 header {
   background-color: var(--surface);
 }
@@ -81,15 +83,36 @@ hr {
   border: 1px solid var(--surface-overlay);
   width: 100%;
 }
-@media (width <= 550px) {
+
+@media (width <=550px) {
+  .user {
+    margin: 0 10px;
+  }
+}
+
+@media (width <=530px) {
+  .logo {
+    order: 1;
+  }
+
+  .user {
+    order: 2;
+  }
+
+  .nav {
+    order: 3;
+  }
+
   .wrapper {
     padding-top: 12px;
     flex-wrap: wrap;
     justify-content: space-around;
     row-gap: 12px;
-    }
+  }
+
 }
-@media (width <= 308px) {
+
+@media (width <=308px) {
   .wrapper {
     width: 308px;
     padding: 12px 0 0 0;
@@ -192,8 +215,8 @@ Main
 .card__text {
   width: 100%;
   overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
+  text-overflow: ellipsis;
+  display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 14px;
@@ -244,32 +267,28 @@ select:not([multiple]) {
   padding: 8px 12px;
 }
 
-@media (width <= 550px) {
-  .logo {
-    order: 1;
-  }
-  .user {
-    order: 2;
-  }
-  .nav {
-    order: 3;
-  }
+@media (width <=550px) {
   .wrapper-main {
     width: 87%;
   }
-  .header__status, .card__state {
+
+  .header__status,
+  .card__state {
     display: none;
   }
+
   .card {
     grid-template-columns: 40px 1fr;
   }
 }
-@media (width <= 308px) {
+
+@media (width <=308px) {
   .wrapper-main {
     width: 268px;
     margin: 52px 20px;
   }
 }
+
 /* ========================
 Analytics
 ======================== */
@@ -334,10 +353,6 @@ Analytics
 .analitics-icon {
   padding: 8px;
   cursor: pointer;
-}
-
-.settings {
-  opacity: 0.6;
 }
 
 .actions {
@@ -407,11 +422,6 @@ Analytics
 
 }
 
-.date-time {
-  display: flex;
-  padding: 8px 16px;
-}
-
 input[type="date"] {
   padding: 10px 8px;
   border: 1px solid var(--outline);
@@ -450,11 +460,12 @@ input[type="date"] {
 
 .table {
   padding: 12px 16px;
+  overflow: auto;
 }
 
 .table-row {
   display: grid;
-  grid-template-columns: 160px 130px 1fr 140px 140px;
+  grid-template-columns: 160px 130px minmax(305px, 1fr) 140px 140px;
 }
 
 .table-row .cell {
@@ -515,7 +526,16 @@ input[type="date"] {
 .table-row .user {
   color: var(--link);
 }
-
+@media (width <= 400px) {
+  .wrapper-analytics {
+    width: 340px;
+  }
+}
+@media (width <= 368px) {
+  .wrapper-analytics {
+    margin: 52px 14px;
+  }
+}
 /* ========================
 Error
 ======================== */
