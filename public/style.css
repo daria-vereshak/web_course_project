@@ -117,10 +117,6 @@ Main
   color: var(--on-surface-disabled);
 }
 
-.qr_scanner {
-  margin-left: 16px;
-}
-
 .fav {
   margin-left: auto;
   margin-right: auto;
@@ -158,7 +154,7 @@ Main
 .card {
   display: grid;
   padding: 8px 12px;
-  grid-template-columns: 40px 1fr 100px 40px;
+  grid-template-columns: 40px 1fr 100px;
   column-gap: 16px;
   background: none;
 }
@@ -181,6 +177,11 @@ Main
 
 .card__text {
   width: 100%;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -219,10 +220,6 @@ select:not([multiple]) {
   background-image: url("./assets/arrow_drop_down_24px.svg");
 }
 
-.share {
-  background: none;
-}
-
 .notification {
   background: none;
   cursor: pointer;
@@ -233,6 +230,17 @@ select:not([multiple]) {
   padding: 8px 12px;
 }
 
+@media (width <= 550px) {
+  .wrapper-main {
+    width: 87%;
+  }
+  .header__status, .card__state {
+    display: none;
+  }
+  .card {
+    grid-template-columns: 40px 1fr;
+  }
+}
 
 /* ========================
 Analytics

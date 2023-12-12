@@ -21,10 +21,6 @@ const getMainInfo = () => {
         }
       });
 
-      const notification = clone.querySelector("use");
-      notification.href.baseVal =
-        "./assets/main_sprites.svg#notification_" + element.notification;
-
       container.appendChild(clone);
     });
   };
