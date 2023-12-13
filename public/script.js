@@ -3,6 +3,13 @@ const url = "../db.json";
 const getMainInfo = () => {
   const fillMainPage = (data) => {
     const container = document.querySelector(".cart__container");
+    var nodes = container.querySelectorAll(".item");
+    nodes.forEach(node => {
+      if (node.parentNode) {
+        node.parentNode.removeChild(node);
+      }
+    });
+
     const template = document.querySelector("#cart_row");
 
     data.forEach((element) => {
@@ -25,10 +32,30 @@ const getMainInfo = () => {
     });
   };
 
+  let allData = {};
+  const searchProcess = (event) => {
+    const text = event.target.value.toUpperCase();
+    if (!!text) {
+      const searchRes = allData.all.filter((item) =>
+        item.name.toUpperCase().includes(text)
+      );
+      document.querySelector(".fav__title").style.display = "none";
+      fillMainPage(searchRes);
+    } else {
+      document.querySelector(".fav__title").style.display = "block";
+      fillMainPage(allData.favorite);
+    }
+  };
+
+  document
+    .querySelector(".search__input")
+    .addEventListener("change", searchProcess);
+
   fetch(url).then((response) => {
     if (response.ok) {
       response.json().then((json) => {
-        fillMainPage(json.cart);
+        allData = json;
+        fillMainPage(json.favorite);
       });
     } else {
       console.log(

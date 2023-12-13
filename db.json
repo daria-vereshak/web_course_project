@@ -1,5 +1,5 @@
 {
-  "cart": [
+  "all": [
     {
       "id": "1",
       "name": "pH-метр Mettler-Toledo International, Inc. SevenCompact S220",
@@ -30,7 +30,23 @@
     },
     {
       "id": "5",
-      "name": "Коагулометр Tcoag, KC 4 Delta",
+      "name": "Коагулометр Tcoag, KC 4 Delta 1",
+      "img": "/img/Коагулометр.png",
+      "isFree": true,
+      "notification": "off"
+    }
+  ],
+  "favorite": [
+    {
+      "id": "1",
+      "name": "pH-метр Mettler-Toledo International, Inc. SevenCompact S220",
+      "img": "/img/ph-meter.png",
+      "isFree": true,
+      "notification": "active"
+    },
+    {
+      "id": "5",
+      "name": "Коагулометр Tcoag, KC 4 Delta 1",
       "img": "/img/Коагулометр.png",
       "isFree": true,
       "notification": "off"
