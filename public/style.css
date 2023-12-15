@@ -251,6 +251,14 @@ select {
   background: none;
 }
 
+use.non-fav{
+  fill: var(--on-surface-disabled);
+}
+
+use.fav {
+  fill: #EE3F44;
+}
+
 select:not([multiple]) {
   padding-right: 1.2em;
   background-repeat: no-repeat;

@@ -97,6 +97,16 @@ const getAnalyticsInfo = () => {
         'Информация о приборе не найдена или запрос не коректен<br><a href="./index.html">Вернуться на главную</a>';
       return;
     }
+
+    async function changeFav () {
+      //функция отправки изменения состояния на сервер
+    }
+    document.querySelector(".favorite").addEventListener('click', (event) => {
+      const icon = event.target.closest("use") || event.target.querySelector("use");
+      icon.classList.toggle("fav");
+      changeFav();
+    })
+
     data.forEach((element) => {
       const clone = template.content.cloneNode(true);
 
