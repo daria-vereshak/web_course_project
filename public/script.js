@@ -98,42 +98,62 @@ const getAnalyticsInfo = () => {
       return;
     }
 
-    async function changeFav () {
-      //функция отправки изменения состояния на сервер
+    async function changeFav(id, isAdding) {
+      const json = {"id": id};
+      if(isAdding)
+        await fetch('addFavorite', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(json)
+        });
+      else
+        await fetch('deleteFavorite', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(json)
+        });
     }
-    document.querySelector(".favorite").addEventListener('click', (event) => {
-      const icon = event.target.closest("use") || event.target.querySelector("use");
+
+    document.querySelector(".favorite").addEventListener("click", (event) => {
+      const icon =
+        event.target.closest("use") || event.target.querySelector("use");
       icon.classList.toggle("fav");
-      changeFav();
-    })
+      changeFav(data[0].id, icon.classList.contains("fav"));
+    });
+
+    const cardHead = document.querySelector(".card-top");
+    cardHead.querySelector("img").src = "../" + data[0].img;
+    cardHead.querySelector(".name").textContent = data[0].name;
+    if (data[0]["is_favorite"])
+      cardHead.querySelector(".non-fav").classList.add("fav");
 
     data.forEach((element) => {
       const clone = template.content.cloneNode(true);
 
       const duration = clone.querySelector(".duration");
-      duration.textContent = element.duration;
+      duration.textContent = element.deadline;
 
       const status = clone.querySelector(".status");
-      status.querySelector(".status-stat").textContent = element.status.stat;
-      status.querySelector(".work-type").textContent = element.status.type;
+      status.querySelector(".status-stat").textContent = element.status;
 
-      const getInnerHTML = (arr, isResult) => {
+      const getInnerHTML = (arr = "", isResult = false) => {
         let str = "";
-        for (let i = 0; i < arr.length; i++) {
-          if (i !== 0) str += "<br />";
-          if (isResult) str += arr[i];
-          else
-            str +=
-              "<span>" +
-              arr[i].substring(0, arr[i].indexOf(":")) +
-              "</span>" +
-              arr[i].substring(arr[i].indexOf(":"));
-        }
+        if (isResult) str += arr;
+        else
+          str +=
+            "<span>" +
+            arr.substring(0, arr.indexOf(":")) +
+            "</span>" +
+            arr.substring(arr.indexOf(":"));
         return str;
       };
 
       const jobs = clone.querySelector(".jobs").querySelector(".line");
-      jobs.innerHTML = getInnerHTML(element.jobs, false);
+      jobs.innerHTML = getInnerHTML(element.task, false);
 
       const result = clone.querySelector(".result");
       result.querySelector(".line").innerHTML = getInnerHTML(
@@ -141,12 +161,12 @@ const getAnalyticsInfo = () => {
         true
       );
 
-      if (element.result.isChecked)
+      if (element.result)
         result.querySelector("use").href.baseVal =
           "./assets/analytics_sprite.svg#checked";
 
       const user = clone.querySelector(".user");
-      user.textContent = element.user;
+      user.textContent = element["id_user"] || "не определен";
 
       container.appendChild(clone);
     });

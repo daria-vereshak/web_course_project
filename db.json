@@ -54,32 +54,26 @@
   ],
   "analytics-1": [
     {
-      "id": 1,
-      "duration": "09.10.2021, 15:46",
-      "status": {
-        "stat": "В работе",
-        "type": "Измерение"
-      },
-      "jobs": ["Образец/серия: 000100057935_170000010325_0000251849"],
-      "result": {
-        "text": [],
-        "isChecked": true
-      },
-      "user": "morozovava"
+      "id": 2,
+      "name":"pH-метр Mettler-Toledo International, Inc. SevenCompact S220",
+      "img": "/img/ph-meter.png",
+      "deadline": "09.10.2021, 15:46",
+      "status": "Завершено",
+      "task": "Номер колонки: Колонка 2",
+      "id_user": 1,
+      "result": "Done1",
+      "is_favorite": 1
     },
     {
-      "id": 2,
-      "duration": "12.10.2021, 12:17",
-      "status": {
-        "stat": "В работе",
-        "type": "Калибровка"
-      },
-      "jobs": ["Номер колонки: Колонка 2","Образец: Образец 2", "Образец: образец 1", "Метод: метов тестовый", "Номер колонки: Колонка 1"],
-      "result": {
-        "text": ["Промывка с указанием вещества: Вещество","Комментарий: тест успешности"],
-        "isChecked": true
-      },
-      "user": "morozovava"
+      "id": 3,
+      "name":"pH-метр Mettler-Toledo International, Inc. SevenCompact S220",
+      "img": "/img/ph-meter.png",
+      "deadline": "09.10.2021, 15:46",
+      "status": "Завершено",
+      "task": "Образец: образец 2",
+      "id_user": 2,
+      "result": "Done3",
+      "is_favorite": 1
     }
   ]
 }
