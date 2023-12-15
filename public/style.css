@@ -53,6 +53,8 @@ header {
   text-transform: uppercase;
   background-color: inherit;
   color: var(--on-surface-medium-emphasis);
+}
+.main {
   cursor: pointer;
 }
 

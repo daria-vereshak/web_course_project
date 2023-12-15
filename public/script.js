@@ -1,10 +1,26 @@
 const url = "../db.json";
 
+let currentId = -1;
 const getMainInfo = () => {
+  currentId = -1;
+  const container = document.querySelector(".cart__container");
+
+  const cartItemClick = (event) => {
+    const element = event.target.closest(".item");
+    currentId = element.querySelector(".card__id").value;
+    changeTab("analytics");
+  };
+  container.addEventListener("click", cartItemClick);
+
   const fillMainPage = (data) => {
-    const container = document.querySelector(".cart__container");
-    var nodes = container.querySelectorAll(".item");
-    nodes.forEach(node => {
+    let nodes = container.querySelectorAll(".item");
+    nodes.forEach((node) => {
+      if (node.parentNode) {
+        node.parentNode.removeChild(node);
+      }
+    });
+    nodes = container.querySelectorAll("hr");
+    nodes.forEach((node) => {
       if (node.parentNode) {
         node.parentNode.removeChild(node);
       }
@@ -14,6 +30,8 @@ const getMainInfo = () => {
 
     data.forEach((element) => {
       const clone = template.content.cloneNode(true);
+
+      clone.querySelector(".card__id").value = element.id;
 
       const image = clone.querySelector(".card__img");
       image.src = "../" + element.img;
@@ -73,6 +91,12 @@ const getAnalyticsInfo = () => {
     const container = document.querySelector(".table");
     const template = document.querySelector("#row");
 
+    if (!data) {
+      container.firstChild.display = "none";
+      container.innerHTML =
+        'Информация о приборе не найдена или запрос не коректен<br><a href="./index.html">Вернуться на главную</a>';
+      return;
+    }
     data.forEach((element) => {
       const clone = template.content.cloneNode(true);
 
@@ -119,9 +143,10 @@ const getAnalyticsInfo = () => {
   };
 
   fetch(url).then((response) => {
+    const need = "analytics-" + currentId;
     if (response.ok) {
       response.json().then((json) => {
-        fillAnalyticsPage(json.analytics);
+        fillAnalyticsPage(json[need]);
       });
     } else {
       console.log(
@@ -147,35 +172,16 @@ const getTab = (tab) => {
 };
 
 const tabButtons = document.querySelectorAll(".tab");
-
-const changeTab = (event) => {
-  const currentTab = getCurrentTab();
-
-  if (!event.target.classList.contains(currentTab.substring(1))) {
-    tabButtons.forEach((button) => {
-      if (button === event.target) button.classList.add("tab-current");
-      else button.classList.remove("tab-current");
-    });
-    getTab(event.target.attributes.href.value.substring(1));
-  }
+const changeTab = (tab) => {
+  tabButtons.forEach((button) => {
+    if (button.value === tab) button.classList.add("tab-current");
+    else button.classList.remove("tab-current");
+  });
+  getTab(tab);
 };
 
-let tab = window.location.hash;
-
-if (tab.length === 0 || tab === "#main") {
-  document.querySelector(".main").classList.add("tab-current");
-  getTab("main");
-} else if (tab === "#analytics") {
-  document.querySelector(".analytics").classList.add("tab-current");
-  getTab("analytics");
-} else {
-  getTab("error");
-}
-
-const getCurrentTab = () => {
-  return window.location.hash;
-};
-
-tabButtons.forEach((button) => {
-  button.addEventListener("click", changeTab);
+document.querySelector(".main").classList.add("tab-current");
+document.querySelector(".main").addEventListener("click", () => {
+  if (document.querySelector(".wrapper-analytics")) changeTab("main");
 });
+getTab("main");

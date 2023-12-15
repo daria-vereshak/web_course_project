@@ -1,19 +1,15 @@
 <template id="cart_row">
-  <div class="card item">
-    <img
-      src=""
-      alt="device"
-      class="card__img"
-    />
-    <span class="card__text"
-      >Some device</span
-    >
-    <select name="state" id="" class="card__state" disabled>
-      <option value="1">Свободен</option>
-      <option value="0">Занят</option>
-    </select>
-  </div>
-  <hr>
+  <form class="card item">
+      <input type="hidden" class="card__id" />
+      <img src="" alt="device" class="card__img" />
+      <span class="card__text">Some device</span>
+      <select name="state" id="" class="card__state" disabled>
+        <option value="1">Свободен</option>
+        <option value="0">Занят</option>
+      </select>
+      <button type="submit" class="submit" style="display: none;"></button>
+  </form>
+  <hr />
 </template>
 
 <div class="wrapper-main">
